@@ -1,5 +1,5 @@
 # amazfit verge lite tool
-An python port of valeronm's amazfitbiptools(v.1.0.3.1) with some hack for verge lite.
+An python port of valeronm's amazfitbiptools(v.1.0.3.1) with some hacks for verge lite.
 
 All credit goes to Валерий Миронов(https://bitbucket.org/valeronm/amazfitbiptools/src/master/)
 
@@ -17,11 +17,11 @@ All credit goes to Валерий Миронов(https://bitbucket.org/valeronm/
 ## usage
 * see scripts folder
   * to unpack
-python main.py WATCH_FACE_FILE.bin
+    * python main.py WATCH_FACE_FILE.bin
   * to pack
-python main.py WATCH_FACE_FILE.json
-  * to convert from extracted GTR watchface
-python convert.py EXTRACTED_WATCH_FACE_FOLDER
+    * python main.py WATCH_FACE_FILE.json
+  * to convert from extracted GTR watchface(experimental BIP support also)
+    * python convert.py EXTRACTED_WATCH_FACE_FOLDER
 
 ## why python instead of C#
 just for fun!
