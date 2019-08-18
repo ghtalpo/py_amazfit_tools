@@ -10,6 +10,6 @@ class Time:
         4: { 'Name': 'AmPm', 'Type': AmPm},
         5: { 'Name': 'DrawingOrder', 'Type': 'long?'},
         9: { 'Name': 'Unknown9', 'Type': 'long?'},
-        10: { 'Name': 'Delimeter', 'Type': Image}, # verge
+        10: { 'Name': 'Delimiter', 'Type': Image}, # verge
     }
 
