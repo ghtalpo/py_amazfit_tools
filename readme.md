@@ -20,6 +20,8 @@ All credit goes to Валерий Миронов(https://bitbucket.org/valeronm/
 python main.py WATCH_FACE_FILE.bin
   * to pack
 python main.py WATCH_FACE_FILE.json
+  * to convert from extracted GTR watchface
+python convert.py EXTRACTED_WATCH_FACE_FOLDER
 
 ## why python instead of C#
 just for fun!
