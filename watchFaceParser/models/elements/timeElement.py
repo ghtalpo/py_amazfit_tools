@@ -34,7 +34,7 @@ class TimeElement(ContainerElement):
     #     return self._drawingOrder
 
 
-    def getDelimeter(self):
+    def getDelimiter(self):
         return self._delimiter
 
     def draw3(self, drawer, images, state):
@@ -57,8 +57,8 @@ class TimeElement(ContainerElement):
 
         if self.getSeconds():
             self.getSeconds().draw3(drawer, images, state.getTime().second)
-        if self.getDelimeter():
-            self.getDelimeter().draw3(drawer, images, state)
+        if self.getDelimiter():
+            self.getDelimiter().draw3(drawer, images, state)
 
 
     def createChildForParameter(self, parameter):
