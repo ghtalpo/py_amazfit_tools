@@ -56,7 +56,7 @@ class CircularProgressElement(CoordinatesElement):
         radius = self.getRadiusX()
         rect = (int(self.getX() - radius), int(self.getY() - radius),
             int(self.getX() + radius), int(self.getY() + radius))
-        d.arc(rect, start = -90, end = -90 + sectorAngle, fill = self.getColor(), width = self.getWidth())
+        d.arc(rect, start = -90 + self.getStartAngle(), end = -90 + self.getStartAngle() + sectorAngle, fill = self.getColor(), width = self.getWidth())
 
 
     def createChildForParameter(self, parameter):
