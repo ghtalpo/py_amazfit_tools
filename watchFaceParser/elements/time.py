@@ -1,5 +1,6 @@
 from watchFaceParser.elements.timeElements.twoDigits import TwoDigits
 from watchFaceParser.elements.timeElements.amPm import AmPm
+from watchFaceParser.elements.timeElements.pm import Pm
 from watchFaceParser.elements.basicElements.image import Image
 
 class Time:
@@ -11,5 +12,6 @@ class Time:
         5: { 'Name': 'DrawingOrder', 'Type': 'long?'},
         9: { 'Name': 'Unknown9', 'Type': 'long?'},
         10: { 'Name': 'Delimiter', 'Type': Image}, # verge
+        12: { 'Name': 'PM', 'Type': Pm} # gtr?
     }
 

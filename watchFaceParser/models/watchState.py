@@ -6,6 +6,7 @@ class WatchState:
         self._time = datetime.datetime.now()
         self._steps = Steps
         self._goal = 8000
+        self._distance = 2367
         self._pulse = Pulse
         self._batteryLevel = BatteryLevel
 
@@ -34,8 +35,12 @@ class WatchState:
         return self._batteryLevel
 
 
+    def getDistance(self):
+        return self._distance
+
+
     def toJSON(self):
-        return { 'Time': self.datetimeToJson(), 'Steps': self._steps, 'Goal': self._goal, 'Pulse': self._pulse, 'BatteryLevel': self._batteryLevel }
+        return { 'Time': self.datetimeToJson(), 'Steps': self._steps, 'Goal': self._goal, 'Pulse': self._pulse, 'BatteryLevel': self._batteryLevel, 'Distance': self._distance }
 
 
     def datetimeToJson(self):
@@ -51,5 +56,6 @@ class WatchState:
         w._goal = j['Goal']
         w._pulse = j['Pulse']
         w._batteryLevel = j['BatteryLevel']
+        w._distance = j['Distance']
         return w
 
