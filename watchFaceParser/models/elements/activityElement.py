@@ -5,12 +5,18 @@ from watchFaceParser.models.elements.basic.containerElement import ContainerElem
 
 class ActivityElement(ContainerElement):
     def __init__(self, parameter, parent = None, name = None):
+        self._stepsGoal = None
         self._steps = None
         self._distance = None
         self._pulse = None
+        self._calories = None
         self._starImage = None
         self._circleRange = None
         super(ActivityElement, self).__init__(parameters = None, parameter = parameter, parent = parent, name = name)
+
+
+    def getStepsGoal(self):
+        return self._stepsGoal
 
 
     def getSteps(self):
@@ -25,6 +31,10 @@ class ActivityElement(ContainerElement):
         return self._pulse
 
 
+    def getCalories(self):
+        return self._calories
+
+
     def getStarImage(self):
         return self._starImage
 
@@ -35,7 +45,15 @@ class ActivityElement(ContainerElement):
 
     def createChildForParameter(self, parameter):
         parameterId = parameter.getId()
-        if parameterId == 3:
+        if parameterId == 1:
+            from watchFaceParser.models.elements.activity.stepsGoalElement import StepsGoalElement
+            self._stepsGoal = StepsGoalElement(parameter = parameter, parent = self, name = '?StepsGoal?')
+            return self._stepsGoal
+        elif parameterId == 2:
+            from watchFaceParser.models.elements.activity.caloriesElement import CaloriesElement
+            self._calories = CaloriesElement(parameter = parameter, parent = self, name = '?Calories?')
+            return self._calories
+        elif parameterId == 3:
             from watchFaceParser.models.elements.activity.pulseElement import PulseElement
             self._pulse = PulseElement(parameter = parameter, parent = self, name = '?Pulse?')
             return self._pulse
@@ -48,8 +66,8 @@ class ActivityElement(ContainerElement):
             self._steps = StepsElement(parameter = parameter, parent = self, name = '?Steps?')
             return self._steps
         elif parameterId == 7:
-            from watchFaceParser.models.elements.common.imageElement import ImageElement
-            self._starImage = ImageElement(parameter = parameter, parent = self, name = '?StarImage?')
+            from watchFaceParser.models.elements.activity.starImageElement import StarImageElement
+            self._starImage = StarImageElement(parameter = parameter, parent = self, name = '?StarImage?')
             return self._starImage
         elif parameterId == 9:
             from watchFaceParser.models.elements.common.imageElement import ImageElement

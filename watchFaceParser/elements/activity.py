@@ -5,8 +5,8 @@ from watchFaceParser.elements.basicElements.image import Image
 
 class Activity:
     definitions = {
-        1: { 'Name': 'Steps1', 'Type': Number},
-        2: { 'Name': 'StepsGoal', 'Type': Number},
+        1: { 'Name': 'StepsGoal', 'Type': Number},
+        2: { 'Name': 'Calories', 'Type': Number},
         3: { 'Name': 'Pulse', 'Type': Number},
         4: { 'Name': 'Distance', 'Type': Distance},
         5: { 'Name': 'Steps', 'Type': FormattedNumber},

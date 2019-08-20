@@ -220,6 +220,8 @@ class Parser:
                 BatteryLevel = 100 - i * 10,
                 Pulse = 60 + num * 2,
                 Steps = num * 1000,
+                Calories = num * 75,
+                Distance = num * 700,
             )
 
             watchState.setTime(datetime.datetime(year = time.year, month = num, day = num * 2 + 5, hour = i * 2, minute = i * 6, second = i))

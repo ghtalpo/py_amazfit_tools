@@ -33,7 +33,7 @@ class ResourcesLoader:
         return self._resources
 
 
-    def images(self):
+    def getImages(self):
         from resources.models.image import Image
         t = []
         for resource in self._resources:

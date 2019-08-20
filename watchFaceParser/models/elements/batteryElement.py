@@ -36,12 +36,9 @@ class BatteryElement(ContainerElement):
             self._text = BatteryNumberElement(parameter = parameter, parent = self, name = '?_text?')
             return self._text
         elif parameterId == 2:
-            from watchFaceParser.models.elements.date.weekDayElement import WeekDayElement # temp.
-            self._images = WeekDayElement(parameter = parameter, parent = self, name = '?_images?')
+            from watchFaceParser.models.elements.battery.batteryGaugeElement import BatteryGaugeElement # temp.
+            self._images = BatteryGaugeElement(parameter = parameter, parent = self, name = '?_images?')
             return self._images
-            # from watchFaceParser.models.elements.common.imageSetElement import ImageSetElement
-            # self._images = ImageSetElement(parameter = parameter, parent = self, name = '?_images?')
-            # return self._images
         elif parameterId == 6:
             from watchFaceParser.models.elements.common.imageElement import ImageElement
             self._percent = ImageElement(parameter = parameter, parent = self, name = '?_percent?')
