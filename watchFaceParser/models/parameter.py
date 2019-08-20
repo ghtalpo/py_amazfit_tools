@@ -7,7 +7,7 @@ from watchFaceParser.models.parameterFlags import ParameterFlags
 def long2ulong(n):
     if type(n) == int:
         if n < 0:
-            return 0xffffffffffffffff + n + 1
+            return (0xffffffffffffffff + n + 1) & 0xffffffff
     return n
 
 
