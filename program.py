@@ -62,6 +62,9 @@ class Parser:
             logging.debug("Building parameters for watch face...")
             descriptor = ParametersConverter.build(WatchFace, watchFace)
 
+            baseName, _ = os.path.splitext(os.path.basename(outputFileName))
+            Parser.generatePreviews(descriptor, imagesReader.getImages(), outputDirectory, baseName)
+
             logging.debug(f"Writing watch face to '{outputFileName}'")
             with open(outputFileName, 'wb') as fileStream:
                 writer = Writer(fileStream, imagesReader.resources())
@@ -173,6 +176,12 @@ class Parser:
         staticPreview = PreviewGenerator.createImage(parameters, images, WatchState())
         logging.debug("Generating static preview gen done...")
         staticPreview.save(os.path.join(outputDirectory, f"{baseName}_static.png"))
+
+        # generate small preview image for Preview section.
+        from PIL import Image
+        new_w, new_h = 210, 210
+        im_resized = staticPreview.resize((new_w, new_h), resample = Image.LANCZOS)
+        im_resized.save(os.path.join(outputDirectory, f"{baseName}_static_210.png"))
         logging.debug("Generating static preview save done...")
 
         previewImages = PreviewGenerator.createAnimation(parameters, images, states)
