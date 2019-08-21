@@ -1,0 +1,301 @@
+{
+  "Background": {
+    "Image": {
+      "X": 0,
+      "Y": 0,
+      "ImageIndex": 0
+    },
+    "Preview": {
+      "X": 0,
+      "Y": 0,
+      "ImageIndex": 1
+    },
+    "FrontImage": {
+      "X": 90,
+      "Y": 90,
+      "ImageIndex": 102
+    }
+  },
+  "Time": {
+    "Hours": {
+      "Tens": {
+        "X": 100,
+        "Y": 184,
+        "ImageIndex": 2,
+        "ImagesCount": 10
+      },
+      "Ones": {
+        "X": 140,
+        "Y": 184,
+        "ImageIndex": 2,
+        "ImagesCount": 10
+      }
+    },
+    "Minutes": {
+      "Tens": {
+        "X": 180,
+        "Y": 184,
+        "ImageIndex": 2,
+        "ImagesCount": 10
+      },
+      "Ones": {
+        "X": 220,
+        "Y": 184,
+        "ImageIndex": 2,
+        "ImagesCount": 10
+      }
+    },
+    "Seconds": {
+      "Tens": {
+        "X": 261,
+        "Y": 244,
+        "ImageIndex": 12,
+        "ImagesCount": 10
+      },
+      "Ones": {
+        "X": 268,
+        "Y": 244,
+        "ImageIndex": 12,
+        "ImagesCount": 10
+      }
+    },
+    "AmPm": {
+      "X": 64,
+      "Y": 64,
+      "ImageIndexAMCN": 222,
+      "ImageIndexPMCN": 223
+    },
+    "Delimiter": {
+      "X": 177,
+      "Y": 190,
+      "ImageIndex": 112
+    }
+  },
+  "Status": {
+    "Bluetooth": {
+      "Coordinates": {
+        "X": 105,
+        "Y": 116
+      },
+      "ImageIndexOn": 82,
+      "ImageIndexOff": 81
+    },
+    "Alarm": {
+      "Coordinates": {
+        "X": 65,
+        "Y": 116
+      },
+      "ImageIndexOn": 83,
+      "ImageIndexOff": 86
+    },
+    "Lock": {
+      "Coordinates": {
+        "X": 85,
+        "Y": 116
+      },
+      "ImageIndexOff": 84,
+      "ImageIndexOn": 86
+    },
+    "DoNotDisturb": {
+      "Coordinates": {
+        "X": 45,
+        "Y": 116
+      },
+      "ImageIndexOn": 85,
+      "ImageIndexOff": 86
+    }
+  },
+  "Activity": {
+    "Calories": {
+      "TopLeftX": 110,
+      "TopLeftY": 280,
+      "BottomRightX": 179,
+      "BottomRightY": 296,
+      "Alignment": "TopRight",
+      "Spacing": 1,
+      "ImageIndex": 12,
+      "ImagesCount": 10
+    },
+    "Pulse": {
+      "TopLeftX": 35,
+      "TopLeftY": 186,
+      "BottomRightX": 115,
+      "BottomRightY": 216,
+      "Alignment": "TopCenter",
+      "Spacing": 1,
+      "ImageIndex": 12,
+      "ImagesCount": 10
+    },
+    "Distance": {
+      "Number": {
+        "TopLeftX": 240,
+        "TopLeftY": 60,
+        "BottomRightX": 279,
+        "BottomRightY": 76,
+        "Alignment": "TopLeft",
+        "Spacing": 1,
+        "ImageIndex": 12,
+        "ImagesCount": 10
+      },
+      "SuffixImageIndex": 425,
+      "DecimalPointImageIndex": 426
+    },
+    "StepsGoal": {
+      "TopLeftX": 40,
+      "TopLeftY": 40,
+      "BottomRightX": 360,
+      "BottomRightY": 60,
+      "Alignment": "TopCenter",
+      "Spacing": 1,
+      "ImageIndex": 12,
+      "ImagesCount": 10
+    },
+    "Steps": {
+      "Step": {
+        "TopLeftX": 0,
+        "TopLeftY": 20,
+        "BottomRightX": 360,
+        "BottomRightY": 40,
+        "Alignment": "TopCenter",
+        "Spacing": 1,
+        "ImageIndex": 12,
+        "ImagesCount": 10
+      },
+      "ImageIndex": 130
+    },
+    "CircleRange": {
+      "X": 35,
+      "Y": 140,
+      "ImageIndex": 30
+    },
+    "StarImage": {
+      "X": 150,
+      "Y": 40,
+      "ImageIndex": 328
+    }
+  },
+  "Date": {
+    "MonthAndDay": {
+      "OneLine": {
+        "Number": {
+          "TopLeftX": 184,
+          "TopLeftY": 316,
+          "BottomRightX": 217,
+          "BottomRightY": 330,
+          "Alignment": "TopLeft",
+          "Spacing": 2,
+          "ImageIndex": 12,
+          "ImagesCount": 10
+        },
+        "DelimiterImageIndex": 22
+      },
+      "TwoDigitsMonth": true,
+      "TwoDigitsDay": true
+    },
+    "WeekDay": {
+      "X": 141,
+      "Y": 316,
+      "ImageIndex": 23,
+      "ImagesCount": 7
+    }
+  },
+  "StepsProgress": {
+    "Circle": {
+      "CenterX": 180,
+      "CenterY": 180,
+      "RadiusX": 176,
+      "RadiusY": 0,
+      "StartAngle": 0,
+      "EndAngle": 360,
+      "Width": 4,
+      "Color": "0x0031BA54",
+      "Unknown9": 180
+    }
+  },
+  "Battery": {
+    "Text": {
+      "TopLeftX": 271,
+      "TopLeftY": 188,
+      "BottomRightX": 284,
+      "BottomRightY": 202,
+      "Alignment": "TopRight",
+      "Spacing": 1,
+      "ImageIndex": 12,
+      "ImagesCount": 10
+    },
+    "Images": {
+      "X": 282,
+      "Y": 154,
+      "ImageIndex": 51,
+      "ImagesCount": 6
+    },
+    "Percent": {
+      "X": 285,
+      "Y": 188,
+      "ImageIndex": 31
+    },
+    "Scale": {
+      "CenterX": 285,
+      "CenterY": 180,
+      "RadiusX": 38,
+      "RadiusY": 0,
+      "StartAngle": 0,
+      "EndAngle": 360,
+      "Width": 4,
+      "Color": "0x00189DFA",
+      "Unknown9": 180
+    }
+  },
+  "AnalogDialFace": {
+    "Hours": {
+      "unknown1": 0,
+      "unknown2": 0,
+      "unknown3": {
+        "X": 0,
+        "Y": 0
+      },
+      "unknown4": {
+        "X": 0,
+        "Y": 0
+      },
+      "CenterImage": {
+        "X": 15,
+        "Y": 101,
+        "ImageIndex": 120
+      }
+    },
+    "Minutes": {
+      "unknown1": 0,
+      "unknown2": 0,
+      "unknown3": {
+        "X": 0,
+        "Y": 0
+      },
+      "unknown4": {
+        "X": 0,
+        "Y": 0
+      },
+      "CenterImage": {
+        "X": 12,
+        "Y": 141,
+        "ImageIndex": 121
+      }
+    },
+    "Seconds": {
+      "unknown1": 0,
+      "unknown2": 0,
+      "unknown3": {
+        "X": 0,
+        "Y": 0
+      },
+      "unknown4": {
+        "X": 0,
+        "Y": 0
+      },
+      "CenterImage": {
+        "X": 10,
+        "Y": 162,
+        "ImageIndex": 122
+      }
+    }
+  }}

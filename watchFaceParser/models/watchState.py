@@ -3,7 +3,7 @@ import datetime
 
 class WatchState:
     def __init__(self, BatteryLevel = 67, Pulse = 62, Steps = 14876, Calories = 764, Distance = 2367, Bluetooth = False, Unlocked = False, Alarm = False, DoNotDisturb = False):
-        self._time = datetime.datetime.now()
+        self._time = datetime.datetime.now().replace(hour = 10, minute = 10, second = 30)
         self._steps = Steps
         self._goal = 8000
         self._distance = Distance
