@@ -8,6 +8,7 @@ class WatchFace(ContainerElement):
         self._activity = None
         self._date = None
         self._stepsProgress = None
+        self._status = None
         self._battery = None
         self._analogDial = None
         super(WatchFace, self).__init__(parameters, parameter = None, parent = None, name = '')
@@ -31,6 +32,10 @@ class WatchFace(ContainerElement):
 
     def getStepsProgress(self):
         return self._stepsProgress
+
+
+    def getStatus(self):
+        return self._status
 
 
     def getBattery(self):
@@ -63,6 +68,10 @@ class WatchFace(ContainerElement):
             from watchFaceParser.models.elements.stepsProgressElement import StepsProgressElement
             self._stepsProgress = StepsProgressElement(parameter)
             return self._stepsProgress
+        elif parameterId == 8:
+            from watchFaceParser.models.elements.statusElement import StatusElement
+            self._status = StatusElement(parameter)
+            return self._status
         elif parameterId == 9:
             from watchFaceParser.models.elements.batteryElement import BatteryElement
             self._battery = BatteryElement(parameter)
