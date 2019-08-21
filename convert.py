@@ -49,6 +49,12 @@ class Converter:
 
     def resizeJson(self, json_path):
         tree = self.loadJson(json_path)
+
+        # prevent PreviewStates.json from being parsed
+        #  from (chenchix)
+        if not 'Background' in tree:
+            return
+
         self.patchTree(tree)
         self.saveJson(json_path, tree)
 
