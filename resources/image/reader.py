@@ -33,10 +33,13 @@ class Reader():
         for y in range(self._height):
             rowBytes = self._reader.read(self._rowLengthInBytes)
             for x in range(self._width):
-                b = rowBytes[x * 4]
-                g = rowBytes[x * 4 + 1]
-                r = rowBytes[x * 4 + 2]
-                alpha = rowBytes[x * 4 + 3]
+                b = rowBytes[x * self._step]
+                g = rowBytes[x * self._step + 1]
+                r = rowBytes[x * self._step + 2]
+                if self._step == 4:
+                    alpha = rowBytes[x * self._step + 3]
+                else:
+                    alpha = 255
                 color = resources.image.color.Color.fromArgb(alpha, r, g, b)
                 image.putpixel((x,y), color)
         return image
@@ -49,10 +52,10 @@ class Reader():
         self._bitsPerPixel = int.from_bytes(self._reader.read(4), byteorder='little')
         self._unknown1 = int.from_bytes(self._reader.read(4), byteorder='little')
         self._unknown2 = int.from_bytes(self._reader.read(4), byteorder='little')
-        self._rowLengthInBytes = self._width * 4
+        self._step = int(self._bitsPerPixel / 8)
+        self._rowLengthInBytes = self._width * self._step
         self._transparency = False
         logging.info("Image header was read:")
         logging.info(f"Width: {self._width}, Height: {self._height}, RowLength: {self._rowLengthInBytes}")
         logging.info(f"BPP: {self._bitsPerPixel}, Transparency: {self._transparency}")
-
 
