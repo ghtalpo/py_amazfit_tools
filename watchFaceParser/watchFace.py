@@ -2,6 +2,7 @@ from watchFaceParser.elements.background import Background
 from watchFaceParser.elements.time import Time
 from watchFaceParser.elements.activity import Activity
 from watchFaceParser.elements.date import Date
+from watchFaceParser.elements.weather import Weather
 from watchFaceParser.elements.stepsProgress import StepsProgress
 from watchFaceParser.elements.status import Status
 from watchFaceParser.elements.battery import Battery
@@ -14,6 +15,7 @@ class WatchFace:
         3: { 'Name': 'Time', 'Type': Time},
         4: { 'Name': 'Activity', 'Type': Activity},
         5: { 'Name': 'Date', 'Type': Date},
+        6: { 'Name': 'Weather', 'Type': Weather},
         7: { 'Name': 'StepsProgress', 'Type': StepsProgress},
         8: { 'Name': 'Status', 'Type': Status},
         9: { 'Name': 'Battery', 'Type': Battery},

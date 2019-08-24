@@ -64,6 +64,10 @@ class WatchFace(ContainerElement):
             from watchFaceParser.models.elements.dateElement import DateElement
             self._date = DateElement(parameter)
             return self._date
+        elif parameterId == 6:
+            from watchFaceParser.models.elements.weatherElement import WeatherElement
+            self._weather = WeatherElement(parameter)
+            return self._weather
         elif parameterId == 7:
             from watchFaceParser.models.elements.stepsProgressElement import StepsProgressElement
             self._stepsProgress = StepsProgressElement(parameter)

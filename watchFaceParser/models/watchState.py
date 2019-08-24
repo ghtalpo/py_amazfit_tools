@@ -1,8 +1,10 @@
 import datetime
 
+from watchFaceParser.models.weatherCondition import WeatherCondition
+
 
 class WatchState:
-    def __init__(self, BatteryLevel = 67, Pulse = 62, Steps = 14876, Calories = 764, Distance = 2367, Bluetooth = False, Unlocked = False, Alarm = False, DoNotDisturb = False):
+    def __init__(self, BatteryLevel = 67, Pulse = 62, Steps = 14876, Calories = 764, Distance = 2367, Bluetooth = False, Unlocked = False, Alarm = False, DoNotDisturb = False, DayTemperature = -15, NightTemperature = -24):
         self._time = datetime.datetime.now().replace(hour = 10, minute = 10, second = 30)
         self._steps = Steps
         self._goal = 8000
@@ -14,6 +16,10 @@ class WatchState:
         self._unlocked = Unlocked
         self._alarm = Alarm
         self._doNotDisturb = DoNotDisturb
+        self._currentWeather = WeatherCondition.PartlyCloudy
+        self._currentTemperature = -10
+        self._dayTemperature = DayTemperature
+        self._nightTemperature = NightTemperature
 
 
     def getTime(self):
@@ -64,6 +70,32 @@ class WatchState:
         return self._doNotDisturb
 
 
+    def getCurrentWeather(self):
+        return self._currentWeather
+
+
+    def setCurrentWeather(self, weather):
+        assert(type(weather) == int)
+        self._currentWeather = weather
+
+
+    def getCurrentTemperature(self):
+        return self._currentTemperature
+
+
+    def setCurrentTemperature(self, temperature):
+        assert(type(temperature) == int or temperature is None)
+        self._currentTemperature = temperature
+
+
+    def getDayTemperature(self):
+        return self._dayTemperature
+
+
+    def getNightTemperature(self):
+        return self._nightTemperature
+
+
     def toJSON(self):
         return {
             'Time': self.datetimeToJson(),
@@ -77,6 +109,10 @@ class WatchState:
             'Unlocked': self._unlocked,
             'Alarm': self._alarm,
             'DoNotDisturb': self._doNotDisturb,
+            'CurrentWeather': self._currentWeather,
+            'CurrentTemperature': self._currentTemperature,
+            'DayTemperature': self._dayTemperature,
+            'NightTemperature': self._nightTemperature,
         }
 
     def datetimeToJson(self):
@@ -98,5 +134,9 @@ class WatchState:
         w._unlocked = j['Unlocked']
         w._alarm = j['Alarm']
         w._doNotDisturb = j['DoNotDisturb']
+        w._currentWeather = j['CurrentWeather']
+        w._currentTemperature = j['CurrentTemperature']
+        w._dayTemperature = j['DayTemperature']
+        w._nightTemperature = j['NightTemperature']
         return w
 

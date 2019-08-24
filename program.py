@@ -10,6 +10,7 @@ from watchFaceParser.utils.resourcesLoader import ResourcesLoader
 from watchFaceParser.watchFace import WatchFace
 from watchFaceParser.models.fileDescriptor import FileDescriptor
 from watchFaceParser.models.watchState import WatchState
+from watchFaceParser.models.weatherCondition import WeatherCondition
 from watchFaceParser.previewGenerator import PreviewGenerator
 
 
@@ -235,7 +236,24 @@ class Parser:
                 Unlocked = num > 2 and num < 7,
                 Alarm = num > 3 and num < 8,
                 DoNotDisturb = num > 4 and num < 9,
+                DayTemperature = -15 + 2 * i,
+                NightTemperature = -24 + 4 * i,
             )
+
+            if num < 3:
+                # watchState.AirQuality = AirCondition.Unknown
+                # watchState.AirQualityIndex = null
+
+                watchState.setCurrentWeather(WeatherCondition.Unknown)
+                watchState.setCurrentTemperature(None)
+            else:
+                index = num - 2
+                # watchState.AirQuality = (AirCondition) index
+                watchState.setCurrentWeather(index) #(WeatherCondition) index
+
+                # watchState.AirQualityIndex = index * 50 - 25
+                watchState.setCurrentTemperature(-10 + i * 6)
+
 
             watchState.setTime(datetime.datetime(year = time.year, month = num, day = num * 2 + 5, hour = i * 2, minute = i * 6, second = i))
             states.append(watchState)
