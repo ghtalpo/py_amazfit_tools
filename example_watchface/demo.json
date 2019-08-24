@@ -72,14 +72,6 @@
     }
   },
   "Status": {
-    "Bluetooth": {
-      "Coordinates": {
-        "X": 105,
-        "Y": 116
-      },
-      "ImageIndexOn": 82,
-      "ImageIndexOff": 81
-    },
     "Alarm": {
       "Coordinates": {
         "X": 65,
@@ -87,14 +79,6 @@
       },
       "ImageIndexOn": 83,
       "ImageIndexOff": 86
-    },
-    "Lock": {
-      "Coordinates": {
-        "X": 85,
-        "Y": 116
-      },
-      "ImageIndexOff": 84,
-      "ImageIndexOn": 86
     },
     "DoNotDisturb": {
       "Coordinates": {
