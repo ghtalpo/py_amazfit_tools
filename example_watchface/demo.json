@@ -13,7 +13,7 @@
     "FrontImage": {
       "X": 90,
       "Y": 90,
-      "ImageIndex": 102
+      "ImageIndex": 2
     }
   },
   "Time": {
@@ -21,13 +21,13 @@
       "Tens": {
         "X": 100,
         "Y": 184,
-        "ImageIndex": 2,
+        "ImageIndex": 3,
         "ImagesCount": 10
       },
       "Ones": {
         "X": 140,
         "Y": 184,
-        "ImageIndex": 2,
+        "ImageIndex": 3,
         "ImagesCount": 10
       }
     },
@@ -35,13 +35,13 @@
       "Tens": {
         "X": 180,
         "Y": 184,
-        "ImageIndex": 2,
+        "ImageIndex": 3,
         "ImagesCount": 10
       },
       "Ones": {
         "X": 220,
         "Y": 184,
-        "ImageIndex": 2,
+        "ImageIndex": 3,
         "ImagesCount": 10
       }
     },
@@ -49,47 +49,39 @@
       "Tens": {
         "X": 261,
         "Y": 244,
-        "ImageIndex": 12,
+        "ImageIndex": 13,
         "ImagesCount": 10
       },
       "Ones": {
         "X": 268,
         "Y": 244,
-        "ImageIndex": 12,
+        "ImageIndex": 13,
         "ImagesCount": 10
       }
     },
     "AmPm": {
       "X": 64,
       "Y": 64,
-      "ImageIndexAMCN": 222,
-      "ImageIndexPMCN": 223
+      "ImageIndexAMCN": 23,
+      "ImageIndexPMCN": 24
     },
     "Delimiter": {
       "X": 177,
       "Y": 190,
-      "ImageIndex": 112
-    }
-  },
-  "Status": {
-    "Alarm": {
-      "Coordinates": {
-        "X": 65,
-        "Y": 116
-      },
-      "ImageIndexOn": 83,
-      "ImageIndexOff": 86
-    },
-    "DoNotDisturb": {
-      "Coordinates": {
-        "X": 45,
-        "Y": 116
-      },
-      "ImageIndexOn": 85,
-      "ImageIndexOff": 86
+      "ImageIndex": 25
     }
   },
   "Activity": {
+    "StepsGoal": {
+      "TopLeftX": 40,
+      "TopLeftY": 40,
+      "BottomRightX": 360,
+      "BottomRightY": 60,
+      "Alignment": "TopCenter",
+      "Spacing": 1,
+      "ImageIndex": 13,
+      "ImagesCount": 10
+    },
     "Calories": {
       "TopLeftX": 110,
       "TopLeftY": 280,
@@ -97,7 +89,7 @@
       "BottomRightY": 296,
       "Alignment": "TopRight",
       "Spacing": 1,
-      "ImageIndex": 12,
+      "ImageIndex": 13,
       "ImagesCount": 10
     },
     "Pulse": {
@@ -107,7 +99,7 @@
       "BottomRightY": 216,
       "Alignment": "TopCenter",
       "Spacing": 1,
-      "ImageIndex": 12,
+      "ImageIndex": 13,
       "ImagesCount": 10
     },
     "Distance": {
@@ -118,21 +110,11 @@
         "BottomRightY": 76,
         "Alignment": "TopLeft",
         "Spacing": 1,
-        "ImageIndex": 12,
+        "ImageIndex": 13,
         "ImagesCount": 10
       },
-      "SuffixImageIndex": 425,
-      "DecimalPointImageIndex": 426
-    },
-    "StepsGoal": {
-      "TopLeftX": 40,
-      "TopLeftY": 40,
-      "BottomRightX": 360,
-      "BottomRightY": 60,
-      "Alignment": "TopCenter",
-      "Spacing": 1,
-      "ImageIndex": 12,
-      "ImagesCount": 10
+      "SuffixImageIndex": 26,
+      "DecimalPointImageIndex": 27
     },
     "Steps": {
       "Step": {
@@ -142,20 +124,20 @@
         "BottomRightY": 40,
         "Alignment": "TopCenter",
         "Spacing": 1,
-        "ImageIndex": 12,
+        "ImageIndex": 13,
         "ImagesCount": 10
       },
-      "ImageIndex": 130
+      "ImageIndex": 28
+    },
+    "StarImage": {
+      "X": 150,
+      "Y": 40,
+      "ImageIndex": 29
     },
     "CircleRange": {
       "X": 35,
       "Y": 140,
       "ImageIndex": 30
-    },
-    "StarImage": {
-      "X": 150,
-      "Y": 40,
-      "ImageIndex": 328
     }
   },
   "Date": {
@@ -168,10 +150,10 @@
           "BottomRightY": 330,
           "Alignment": "TopLeft",
           "Spacing": 2,
-          "ImageIndex": 12,
+          "ImageIndex": 13,
           "ImagesCount": 10
         },
-        "DelimiterImageIndex": 22
+        "DelimiterImageIndex": 31
       },
       "TwoDigitsMonth": true,
       "TwoDigitsDay": true
@@ -179,7 +161,7 @@
     "WeekDay": {
       "X": 141,
       "Y": 316,
-      "ImageIndex": 23,
+      "ImageIndex": 32,
       "ImagesCount": 7
     }
   },
@@ -196,6 +178,24 @@
       "Unknown9": 180
     }
   },
+  "Status": {
+    "DoNotDisturb": {
+      "Coordinates": {
+        "X": 45,
+        "Y": 116
+      },
+      "ImageIndexOn": 39,
+      "ImageIndexOff": 40
+    },
+    "Alarm": {
+      "Coordinates": {
+        "X": 65,
+        "Y": 116
+      },
+      "ImageIndexOn": 41,
+      "ImageIndexOff": 40
+    }
+  },
   "Battery": {
     "Text": {
       "TopLeftX": 271,
@@ -204,19 +204,19 @@
       "BottomRightY": 202,
       "Alignment": "TopRight",
       "Spacing": 1,
-      "ImageIndex": 12,
+      "ImageIndex": 13,
       "ImagesCount": 10
     },
     "Images": {
       "X": 282,
       "Y": 154,
-      "ImageIndex": 51,
+      "ImageIndex": 42,
       "ImagesCount": 6
     },
     "Percent": {
       "X": 285,
       "Y": 188,
-      "ImageIndex": 31
+      "ImageIndex": 48
     },
     "Scale": {
       "CenterX": 285,
@@ -245,7 +245,7 @@
       "CenterImage": {
         "X": 15,
         "Y": 101,
-        "ImageIndex": 120
+        "ImageIndex": 49
       }
     },
     "Minutes": {
@@ -262,7 +262,7 @@
       "CenterImage": {
         "X": 12,
         "Y": 141,
-        "ImageIndex": 121
+        "ImageIndex": 50
       }
     },
     "Seconds": {
@@ -279,7 +279,8 @@
       "CenterImage": {
         "X": 10,
         "Y": 162,
-        "ImageIndex": 122
+        "ImageIndex": 51
       }
     }
-  }}
+  }
+}
