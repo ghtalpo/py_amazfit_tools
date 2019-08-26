@@ -6,6 +6,8 @@ from watchFaceParser.models.elements.basic.compositeElement import CompositeElem
 class DistanceElement(CompositeElement):
     def __init__(self, parameter, parent, name = None):
         self._number = None
+        self._suffixImageIndex = None
+        self._decimalPointImageIndex = None
         super(DistanceElement, self).__init__(parameters = None, parameter = parameter, parent = parent, name = name)
 
     def getNumber(self):
@@ -26,7 +28,8 @@ class DistanceElement(CompositeElement):
         images.append(resources[self.getDecimalPointImageIndex()])
         for image in self.getNumber().getImagesForNumber(resources, decimals):
             images.append(image)
-        images.append(resources[self.getSuffixImageIndex()])
+        if self.getSuffixImageIndex():
+            images.append(resources[self.getSuffixImageIndex()])
 
         from watchFaceParser.helpers.drawerHelper import DrawerHelper
         DrawerHelper.drawImages(drawer, images, int(self.getNumber().getSpacing()), self.getNumber().getAlignment(), self.getNumber().getBox())
