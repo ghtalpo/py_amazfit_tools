@@ -22,6 +22,15 @@ All credit goes to Валерий Миронов(https://bitbucket.org/valeronm/
     * python main.py WATCH_FACE_FILE.json
   * to convert from extracted GTR watchface(experimental BIP support also)
     * python convert.py EXTRACTED_WATCH_FACE_FOLDER
+* for windows users(experimental) : USE AT YOUR OWN RISK
+  * copy & unzip amazfit_verge_lite_tools_WIN32.zip from release/win32
+    * to pack
+      * drag & drop WATCH_FACE_FILE.json into main/main.exe
+    * to unpack
+      * drag & drop WATCH_FACE_FILE.bin into main/main.exe
+    * to convert from extracted GTR watchface(experimental BIP support also)
+      * drag & drop EXTRACTED_WATCH_FACE_FOLDER into convert/convert.exe
 
 ## why python instead of C#
 just for fun!
+
