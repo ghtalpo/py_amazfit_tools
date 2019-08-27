@@ -1,8 +1,6 @@
 ﻿import logging
 
 from watchFaceParser.models.elements.basic.compositeElement import CompositeElement
-from resources.image.color import Color
-
 
 class ClockHandElement(CompositeElement):
     def __init__(self, parameter, parent, name = None):
