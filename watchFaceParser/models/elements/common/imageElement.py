@@ -1,6 +1,7 @@
 ﻿import logging
 
 from watchFaceParser.models.elements.common.coordinatesElement import CoordinatesElement
+from watchFaceParser.config import Config
 
 
 class ImageElement(CoordinatesElement):
@@ -30,8 +31,10 @@ class ImageElement(CoordinatesElement):
         else:
             bitmap = images[self._imageIndex].getBitmap()
             from PIL import Image
-            temp = Image.new('RGBA', (360, 360))
-            temp.paste(bitmap, (180 - x, 180 - y), bitmap)
+            # temp = Image.new('RGBA', (360, 360))
+            # temp.paste(bitmap, (180 - x, 180 - y), bitmap)
+            temp = Image.new('RGBA', (Config.getImageSize(), Config.getImageSize()))
+            temp.paste(bitmap, (Config.getImageSizeHalf() - x, Config.getImageSizeHalf() - y), bitmap)
             temp = temp.rotate(angle)
             drawer.paste(temp, (0,0), temp)
 
