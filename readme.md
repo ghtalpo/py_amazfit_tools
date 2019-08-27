@@ -36,6 +36,12 @@ All credit goes to Валерий Миронов(https://bitbucket.org/valeronm/
     * python main.py --gtr WATCH_FACE_FILE.bin
   * to pack
     * python main.py --gtr WATCH_FACE_FILE.json
+  * for windows users(experimental) : USE AT YOUR OWN RISK
+    * copy & unzip amazfit_gtr_tools_WIN32.7z from release/win32
+      * to pack
+        * drag & drop WATCH_FACE_FILE.json into main_gtr/main.exe
+      * to unpack
+        * drag & drop WATCH_FACE_FILE.bin into main_gtr/main.exe
 
 ## writing json for GTR
 * Unlike verge lite, Date/Weekday/ImagesCount should be 21 instead of 7.(Correct me if i'm wrong)
