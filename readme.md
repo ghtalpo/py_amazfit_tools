@@ -1,4 +1,4 @@
-# amazfit verge lite tool
+# py amazfit tool
 An python port of valeronm's amazfitbiptools(v.1.0.3.1) with some hacks for verge lite.
 
 All credit goes to Валерий Миронов(https://bitbucket.org/valeronm/amazfitbiptools/src/master/)
