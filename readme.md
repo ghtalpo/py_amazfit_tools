@@ -4,10 +4,10 @@ An python port of valeronm's amazfitbiptools(v.1.0.3.1) with some hacks for verg
 All credit goes to Валерий Миронов(https://bitbucket.org/valeronm/amazfitbiptools/src/master/)
 
 ## what is...
-* can pack/unpack .bin file for amazfit verge lite(original watchfaces)
+* can pack/unpack .bin file for amazfit verge lite/gtr(original watchfaces)
 
 ## what isn't...
-* 100% conversion from amazfit_bip_tool
+* 100% compatibility with amazfit_bip_tool
 * 100% compatibility with .json structures of bip
 
 ## requirements
