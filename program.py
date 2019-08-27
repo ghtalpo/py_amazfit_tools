@@ -11,6 +11,7 @@ from watchFaceParser.watchFace import WatchFace
 from watchFaceParser.models.fileDescriptor import FileDescriptor
 from watchFaceParser.models.watchState import WatchState
 from watchFaceParser.previewGenerator import PreviewGenerator
+from watchFaceParser.config import Config
 
 
 def dumper(obj):
@@ -179,9 +180,9 @@ class Parser:
 
         # generate small preview image for Preview section.
         from PIL import Image
-        new_w, new_h = 210, 210
+        new_w, new_h = Config.getPreviewSize(), Config.getPreviewSize()
         im_resized = staticPreview.resize((new_w, new_h), resample = Image.LANCZOS)
-        im_resized.save(os.path.join(outputDirectory, f"{baseName}_static_210.png"))
+        im_resized.save(os.path.join(outputDirectory, f"{baseName}_static_{Config.getPreviewSize()}.png"))
         logging.debug("Generating static preview save done...")
 
         previewImages = PreviewGenerator.createAnimation(parameters, images, states)
