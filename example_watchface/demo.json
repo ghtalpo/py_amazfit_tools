@@ -109,7 +109,7 @@
         "BottomRightX": 279,
         "BottomRightY": 76,
         "Alignment": "TopLeft",
-        "Spacing": 1,
+        "Spacing": -3,
         "ImageIndex": 13,
         "ImagesCount": 10
       },

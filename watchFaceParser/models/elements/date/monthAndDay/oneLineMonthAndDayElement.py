@@ -1,6 +1,7 @@
 ﻿import logging
 
 from watchFaceParser.models.elements.basic.compositeElement import CompositeElement
+from watchFaceParser.utils.parametersConverter import uint2int
 
 
 class OneLineMonthAndDayElement(CompositeElement):
@@ -29,7 +30,7 @@ class OneLineMonthAndDayElement(CompositeElement):
             images.append(image)
 
         from watchFaceParser.helpers.drawerHelper import DrawerHelper
-        DrawerHelper.drawImages(drawer, images, int(self.getNumber().getSpacing()), self.getNumber().getAlignment(), self.getNumber().getBox())
+        DrawerHelper.drawImages(drawer, images, uint2int(self.getNumber().getSpacing()), self.getNumber().getAlignment(), self.getNumber().getBox())
 
 
     def createChildForParameter(self, parameter):

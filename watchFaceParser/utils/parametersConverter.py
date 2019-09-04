@@ -13,6 +13,11 @@ def ulong2long(n):
             return -(0xffffffffffffffff - n + 1)
     return n
 
+def uint2int(n):
+    if type(n) == int:
+        if n >= 0x7fffffff:
+            return -(0xffffffff - n + 1)
+    return n
 
 class ParametersConverter:
     @staticmethod
