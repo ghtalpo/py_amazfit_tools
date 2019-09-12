@@ -62,6 +62,11 @@ All credit goes to Валерий Миронов(https://bitbucket.org/valeronm/
   "Status": {
     "Lock": {
 ```
+### bluetooth icons (not working?)
+```
+  "Status": {
+    "Bluetooth": {
+```
 
 ### analog hands' releative position (only works for GTR)
 
