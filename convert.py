@@ -3,7 +3,7 @@ import logging
 
 class Converter:
     width_gtr = 454
-    width_verge_lite = 210
+    width_verge_lite = 360
     width_bip = 176
 
     def __init__(self):
