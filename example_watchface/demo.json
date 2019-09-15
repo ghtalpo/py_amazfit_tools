@@ -175,7 +175,7 @@
       "EndAngle": 360,
       "Width": 10,
       "Color": "0x0031BA54",
-      "Unknown9": 0
+      "Flatness": 0
     }
   },
   "Status": {
@@ -227,7 +227,7 @@
       "EndAngle": 360,
       "Width": 10,
       "Color": "0x00189DFA",
-      "Unknown9": 90
+      "Flatness": 90
     }
   },
   "AnalogDialFace": {
