@@ -43,8 +43,9 @@ All credit goes to Валерий Миронов(https://bitbucket.org/valeronm/
       * to unpack
         * drag & drop WATCH_FACE_FILE.bin into main_gtr/main.exe
 
-## writing json for GTR
-* Unlike verge lite, Date/Weekday/ImagesCount should be 21 instead of 7.(Correct me if i'm wrong)
+## known issues in json
+### Date/Weekday/ImageCount (GTR)
+* Unlike verge lite, Date/Weekday/ImagesCount should be 21 instead of 7
 
 ```
   "Date": {
@@ -56,6 +57,18 @@ All credit goes to Валерий Миронов(https://bitbucket.org/valeronm/
     }
   },
 ```
+### lock icons (only works for GTR)
+```
+  "Status": {
+    "Lock": {
+```
+### bluetooth icons (not working?)
+```
+  "Status": {
+    "Bluetooth": {
+```
+
+### analog hands' releative position (only works for GTR)
 
 ## why python instead of C#
 just for fun!

@@ -20,6 +20,13 @@ class TextAlignment:
     BottomRight = Bottom | Right
 
     Converter = {
+        Left : "Left",
+        Right : "Right",
+        HCenter : "HCenter",
+        Top : "Top",
+        Bottom : "Bottom",
+        VCenter : "VCenter",
+
         TopCenter : "TopCenter",
         TopLeft : "TopLeft",
         TopRight : "TopRight",
