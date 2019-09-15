@@ -11,7 +11,7 @@ class CircularProgressElement(CoordinatesElement):
         self._endAngle = None
         self._width = None
         self._color = None
-        self._unknown9 = None
+        self._flatness = None
         super(CircularProgressElement, self).__init__(parameter = parameter, parent = parent, name = name)
 
 
@@ -39,8 +39,8 @@ class CircularProgressElement(CoordinatesElement):
         return self._color
 
 
-    def getUnknown9(self):
-        return self._unknown9
+    def getFlatness(self):
+        return self._flatness # TODO: works on real watch. no effects on previews.
 
 
     def draw4(self, drawer, resources, value, total):
@@ -82,7 +82,7 @@ class CircularProgressElement(CoordinatesElement):
             self._color = Color.fromArgb(0xff000000 | parameter.getValue())
             return ValueElement(parameter = parameter, parent = self, name = '?_color?')
         elif parameterId == 9:
-            self._unknown9 = parameter.getValue()
-            return ValueElement(parameter = parameter, parent = self, name = '?_unknown9?')
+            self._flatness = parameter.getValue()
+            return ValueElement(parameter = parameter, parent = self, name = '?_flatness?')
         else:
             return super(CircularProgressElement, self).createChildForParameter(parameter)

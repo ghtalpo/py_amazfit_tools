@@ -169,13 +169,13 @@
     "Circle": {
       "CenterX": 180,
       "CenterY": 180,
-      "RadiusX": 176,
+      "RadiusX": 175,
       "RadiusY": 0,
       "StartAngle": 0,
       "EndAngle": 360,
-      "Width": 4,
+      "Width": 10,
       "Color": "0x0031BA54",
-      "Unknown9": 180
+      "Unknown9": 0
     }
   },
   "Status": {
@@ -225,9 +225,9 @@
       "RadiusY": 0,
       "StartAngle": 0,
       "EndAngle": 360,
-      "Width": 4,
+      "Width": 10,
       "Color": "0x00189DFA",
-      "Unknown9": 180
+      "Unknown9": 90
     }
   },
   "AnalogDialFace": {
