@@ -31,7 +31,7 @@ All credit goes to Валерий Миронов(https://bitbucket.org/valeronm/
         * drag & drop WATCH_FACE_FILE.bin into main/main.exe
       * to convert from extracted GTR watchface(experimental BIP support also)
         * drag & drop EXTRACTED_WATCH_FACE_FOLDER into convert/convert.exe
-* for GTR
+* for GTR(47mm)
   * to unpack
     * python main.py --gtr WATCH_FACE_FILE.bin
   * to pack
@@ -44,7 +44,7 @@ All credit goes to Валерий Миронов(https://bitbucket.org/valeronm/
         * drag & drop WATCH_FACE_FILE.bin into main_gtr/main.exe
 
 ## known issues in json
-### Date/Weekday/ImageCount (GTR)
+### Date/Weekday/ImageCount (GTR(47mm))
 * Unlike verge lite, Date/Weekday/ImagesCount should be 21 instead of 7
 
 ```
@@ -57,18 +57,12 @@ All credit goes to Валерий Миронов(https://bitbucket.org/valeronm/
     }
   },
 ```
-### lock icons (only works for GTR)
-```
-  "Status": {
-    "Lock": {
-```
-### bluetooth icons (not working?)
-```
-  "Status": {
-    "Bluetooth": {
-```
+### status icons
+#### lock & bluetooth icons broken (Verge Lite)
+#### working for (GTR(47mm))
+* use GTR branch
 
-### analog hands' relative position (only works for GTR)
+### analog hands' relative position (only works for GTR(47mm))
 
 ## why python instead of C#
 just for fun!
