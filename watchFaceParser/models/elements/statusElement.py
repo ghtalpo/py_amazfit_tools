@@ -37,11 +37,11 @@ class StatusElement(ContainerElement):
             from watchFaceParser.models.elements.status.unlockedElement import UnlockedElement
             self._unlocked = UnlockedElement(parameter = parameter, parent = self, name = 'Unlocked')
             return self._unlocked
-        elif parameterId == 4:
+        elif parameterId == 1:
             from watchFaceParser.models.elements.status.alarmElement import AlarmElement
             self._alarm = AlarmElement(parameter = parameter, parent = self, name = 'Alarm')
             return self._alarm
-        elif parameterId == 1:
+        elif parameterId == 4:
             from watchFaceParser.models.elements.status.doNotDisturbElement import DoNotDisturbElement
             self._doNotDisturb = DoNotDisturbElement(parameter = parameter, parent = self, name = 'DoNotDisturb')
             return self._doNotDisturb
