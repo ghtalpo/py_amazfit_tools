@@ -1,4 +1,5 @@
 class TextAlignment:
+    Default = 0
     Left = 2
     Right = 4
     HCenter = 8
@@ -20,6 +21,7 @@ class TextAlignment:
     BottomRight = Bottom | Right
 
     Converter = {
+        Default : "Default",
         Left : "Left",
         Right : "Right",
         HCenter : "HCenter",
