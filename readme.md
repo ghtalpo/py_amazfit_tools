@@ -68,7 +68,7 @@ All credit goes to Валерий Миронов(https://bitbucket.org/valeronm/
     "Bluetooth": {
 ```
 
-### analog hands' releative position (only works for GTR)
+### analog hands' relative position (only works for GTR)
 
 ## why python instead of C#
 just for fun!
