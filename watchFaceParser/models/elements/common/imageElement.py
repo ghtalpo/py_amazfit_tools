@@ -22,6 +22,24 @@ class ImageElement(CoordinatesElement):
         self.draw2(drawer, resources, None)
 
 
+    def draw2x(self, drawer, images, angle, center):
+        x = self._x
+        y = self._y
+        if angle is None:
+            temp = images[self._imageIndex].getBitmap()
+            drawer.paste(temp, (center.getX() + x, center.getY() + y), temp)
+        else:
+            bitmap = images[self._imageIndex].getBitmap()
+            from PIL import Image
+            # temp = Image.new('RGBA', (360, 360))
+            # temp.paste(bitmap, (180 - x, 180 - y), bitmap)
+            temp = Image.new('RGBA', (Config.getImageSize(), Config.getImageSize()))
+            temp.paste(bitmap, (Config.getImageSizeHalf() - x, Config.getImageSizeHalf() - y), bitmap)
+            temp = temp.rotate(angle)
+            drawer.paste(temp, (center.getX() + 0, center.getY() + 0), temp)
+            # print('ie?', center.getX(), center.getY())
+
+
     def draw2(self, drawer, images, angle):
         x = self._x
         y = self._y

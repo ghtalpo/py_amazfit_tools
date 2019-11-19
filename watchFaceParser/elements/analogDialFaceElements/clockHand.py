@@ -5,7 +5,7 @@ class ClockHand:
     definitions = {
         1: { 'Name': 'unknown1', 'Type': 'long'},
         2: { 'Name': 'unknown2', 'Type': 'long'},
-        3: { 'Name': 'unknown3', 'Type': Coordinates},
+        3: { 'Name': 'CenterOffset', 'Type': Coordinates},
         4: { 'Name': 'unknown4', 'Type': Coordinates},
         5: { 'Name': 'CenterImage', 'Type': Image},
     }
