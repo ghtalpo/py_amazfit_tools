@@ -29,19 +29,19 @@ class StatusElement(ContainerElement):
 
     def createChildForParameter(self, parameter):
         parameterId = parameter.getId()
-        if parameterId == 2:
+        if parameterId == 1: # not working for VL
             from watchFaceParser.models.elements.status.bluetoothElement import BluetoothElement
             self._bluetooth = BluetoothElement(parameter = parameter, parent = self, name = 'Bluetooth')
             return self._bluetooth
-        elif parameterId == 3:
+        elif parameterId == 3: # not working for VL
             from watchFaceParser.models.elements.status.unlockedElement import UnlockedElement
             self._unlocked = UnlockedElement(parameter = parameter, parent = self, name = 'Unlocked')
             return self._unlocked
-        elif parameterId == 4:
+        elif parameterId == 2: # working for VL
             from watchFaceParser.models.elements.status.alarmElement import AlarmElement
             self._alarm = AlarmElement(parameter = parameter, parent = self, name = 'Alarm')
             return self._alarm
-        elif parameterId == 1:
+        elif parameterId == 4: # working for VL
             from watchFaceParser.models.elements.status.doNotDisturbElement import DoNotDisturbElement
             self._doNotDisturb = DoNotDisturbElement(parameter = parameter, parent = self, name = 'DoNotDisturb')
             return self._doNotDisturb
