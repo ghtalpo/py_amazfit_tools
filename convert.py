@@ -88,8 +88,11 @@ class Converter:
                     new_w = int(w * self.target_size / self.source_size)
                     new_h = int(h * self.target_size / self.source_size)
                     im = im.convert('RGBA')
-                    im_resized = im.resize((new_w, new_h), resample = Image.LANCZOS)
-                    im_resized.save(full_path)
+                    if new_w == 0 or new_h == 0:
+                    	print('weird dimenstions', name)
+                    else:
+                    	im_resized = im.resize((new_w, new_h), resample = Image.LANCZOS)
+                    	im_resized.save(full_path)
                 elif name.endswith('.json'):
                     self.resizeJson(full_path)
         print('Done...', top_dir)
