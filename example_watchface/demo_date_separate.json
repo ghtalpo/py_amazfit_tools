@@ -240,7 +240,7 @@
     "Hours": {
       "unknown1": 0,
       "unknown2": 0,
-      "unknown3": {
+      "CenterOffset": {
         "X": 0,
         "Y": 0
       },
@@ -257,7 +257,7 @@
     "Minutes": {
       "unknown1": 0,
       "unknown2": 0,
-      "unknown3": {
+      "CenterOffset": {
         "X": 0,
         "Y": 0
       },
@@ -274,7 +274,7 @@
     "Seconds": {
       "unknown1": 0,
       "unknown2": 0,
-      "unknown3": {
+      "CenterOffset": {
         "X": 0,
         "Y": 0
       },

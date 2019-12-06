@@ -2,6 +2,7 @@
 
 from watchFaceParser.models.elements.common.coordinatesElement import CoordinatesElement
 from watchFaceParser.config import Config
+from watchFaceParser.utils.integerConverter import uint2int
 
 
 class ImageElement(CoordinatesElement):
@@ -37,7 +38,6 @@ class ImageElement(CoordinatesElement):
             temp.paste(bitmap, (Config.getImageSizeHalf() - x, Config.getImageSizeHalf() - y), bitmap)
             temp = temp.rotate(angle)
             drawer.paste(temp, (center.getX() + 0, center.getY() + 0), temp)
-            # print('ie?', center.getX(), center.getY())
 
 
     def draw2(self, drawer, images, angle):

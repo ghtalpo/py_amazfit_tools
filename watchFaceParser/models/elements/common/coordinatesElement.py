@@ -1,6 +1,7 @@
 ﻿import logging
 
 from watchFaceParser.models.elements.basic.compositeElement import CompositeElement
+from watchFaceParser.utils.integerConverter import uint2int
 
 
 class CoordinatesElement(CompositeElement):
@@ -22,11 +23,11 @@ class CoordinatesElement(CompositeElement):
         parameterId = parameter.getId()
         if parameterId == 1:
             from watchFaceParser.models.elements.basic.valueElement import ValueElement
-            self._x = parameter.getValue()
+            self._x = uint2int(parameter.getValue())
             return ValueElement(parameter = parameter, parent = self, name = '?X?')
         elif parameterId == 2:
             from watchFaceParser.models.elements.basic.valueElement import ValueElement
-            self._y = parameter.getValue()
+            self._y = uint2int(parameter.getValue())
             return ValueElement(parameter = parameter, parent = self, name = '?Y?')
         else:
             super(CoordinatesElement, self).createChildForParameter(parameter)

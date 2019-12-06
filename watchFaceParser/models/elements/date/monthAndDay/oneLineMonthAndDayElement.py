@@ -1,7 +1,7 @@
 ﻿import logging
 
 from watchFaceParser.models.elements.basic.compositeElement import CompositeElement
-from watchFaceParser.utils.parametersConverter import uint2int
+from watchFaceParser.utils.integerConverter import uint2int
 
 
 class OneLineMonthAndDayElement(CompositeElement):
