@@ -57,12 +57,8 @@ All credit goes to Валерий Миронов(https://bitbucket.org/valeronm/
     }
   },
 ```
-### status icons
-#### lock & bluetooth icons broken (Verge Lite)
-#### working for (GTR(47mm))
-* use GTR branch
-
-### analog hands' relative position (only works for GTR(47mm))
+### weather info
+not works for verge lite
 
 ## why python instead of C#
 just for fun!
