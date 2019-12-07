@@ -12,6 +12,7 @@ from watchFaceParser.models.fileDescriptor import FileDescriptor
 from watchFaceParser.models.watchState import WatchState
 from watchFaceParser.previewGenerator import PreviewGenerator
 from watchFaceParser.config import Config
+from watchFaceParser.models.weatherCondition import WeatherCondition
 
 
 def dumper(obj):
@@ -236,7 +237,16 @@ class Parser:
                 Unlocked = num > 2 and num < 7,
                 Alarm = num > 3 and num < 8,
                 DoNotDisturb = num > 4 and num < 9,
+                CurrentTemperature = -15 + 2 * i,
             )
+
+            if num < 3:
+                watchState.setCurrentWeather(WeatherCondition.Unknown)
+                watchState.setCurrentTemperature(None)
+            else:
+                index = num - 2
+                watchState.setCurrentWeather(index)
+                watchState.setCurrentTemperature(-10 + i * 6)
 
             watchState.setTime(datetime.datetime(year = time.year, month = num, day = num * 2 + 5, hour = i * 2, minute = i * 6, second = i))
             states.append(watchState)
