@@ -58,7 +58,8 @@ All credit goes to Валерий Миронов(https://bitbucket.org/valeronm/
   },
 ```
 ### weather info
-not works for verge lite
+* preview only
+* not works for verge lite
 
 ## why python instead of C#
 just for fun!
