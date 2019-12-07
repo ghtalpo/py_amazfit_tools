@@ -7,6 +7,7 @@ class WatchFace(ContainerElement):
         self._time = None
         self._activity = None
         self._date = None
+        self._weather = None
         self._stepsProgress = None
         self._status = None
         self._battery = None
@@ -28,6 +29,10 @@ class WatchFace(ContainerElement):
 
     def getDate(self):
         return self._date
+
+
+    def getWeather(self):
+        return self._weather
 
 
     def getStepsProgress(self):
@@ -64,6 +69,10 @@ class WatchFace(ContainerElement):
             from watchFaceParser.models.elements.dateElement import DateElement
             self._date = DateElement(parameter)
             return self._date
+        elif parameterId == 6:
+            from watchFaceParser.models.elements.weatherElement import WeatherElement
+            self._weather = WeatherElement(parameter)
+            return self._weather
         elif parameterId == 7:
             from watchFaceParser.models.elements.stepsProgressElement import StepsProgressElement
             self._stepsProgress = StepsProgressElement(parameter)
