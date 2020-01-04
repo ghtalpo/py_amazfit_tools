@@ -1,3 +1,5 @@
+from watchFaceParser.utils.integerConverter import uint2int
+
 class DrawerHelper:
     @staticmethod
     def calculateBounds(images, spacing):
@@ -24,6 +26,8 @@ class DrawerHelper:
         assert(type(images) == list)
         assert(type(spacing) == int)
         assert(type(alignment) == int)
+
+        spacing = uint2int(spacing)
 
         (bitmapWidth, bitmapHeight) = DrawerHelper.calculateBounds(images, spacing)
 
