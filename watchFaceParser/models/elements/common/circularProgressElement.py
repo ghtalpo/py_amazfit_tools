@@ -51,12 +51,18 @@ class CircularProgressElement(CoordinatesElement):
             value = total
         sectorAngle = int(1.0 * (self.getEndAngle() - self.getStartAngle()) * value / total)
 
+        startAngle = -90 + self.getStartAngle()
+        endAngle = -90 + self.getStartAngle() + sectorAngle
+
+        if sectorAngle < 0:
+            startAngle, endAngle = endAngle, startAngle
+
         from PIL import ImageDraw
         d = ImageDraw.Draw(drawer) # draw context
         radius = self.getRadiusX() + int(self.getWidth() / 2) # patch for PIL arc
         rect = (int(self.getX() - radius), int(self.getY() - radius),
             int(self.getX() + radius), int(self.getY() + radius))
-        d.arc(rect, start = -90 + self.getStartAngle(), end = -90 + self.getStartAngle() + sectorAngle, fill = self.getColor(), width = self.getWidth())
+        d.arc(rect, start = startAngle, end = endAngle, fill = self.getColor(), width = self.getWidth())
 
 
     def createChildForParameter(self, parameter):
