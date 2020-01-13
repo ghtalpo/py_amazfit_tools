@@ -21,4 +21,5 @@ class WatchFace:
         9: { 'Name': 'Battery', 'Type': Battery},
         10: { 'Name': 'AnalogDialFace', 'Type': AnalogDialFace},
         14: { 'Name': 'Unknown14', 'Type': UnknownType14},
+        15: { 'Name': 'Unknown15', 'Type': AnalogDialFace}, #?
     }

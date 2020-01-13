@@ -10,4 +10,6 @@ class Number:
         6: { 'Name': 'Spacing', 'Type': 'long'},
         7: { 'Name': 'ImageIndex', 'Type': 'long'},
         8: { 'Name': 'ImagesCount', 'Type': 'long'},
+        9: { 'Name': 'Unknown9', 'Type': 'long'},
+        10: { 'Name': 'Unknown10', 'Type': 'long'},
     }
