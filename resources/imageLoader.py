@@ -30,7 +30,7 @@ class ImageLoader:
 
         fullFileName = os.path.join(directory, numericPart + Image.resourceExtension)
         if not os.path.exists(fullFileName):
-            logging.debug(f"File {fullFileName} doesn't exist.")
+            logging.debug(f"File {fullFileName} doesn't exists.")
             return None
 
         image = ImageLoader.openImage(fullFileName)

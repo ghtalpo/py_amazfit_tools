@@ -89,10 +89,10 @@ class Converter:
                     new_h = int(h * self.target_size / self.source_size)
                     im = im.convert('RGBA')
                     if new_w == 0 or new_h == 0:
-                        print('weird dimenstions', name)
+                    	print('weird dimenstions', name)
                     else:
-                        im_resized = im.resize((new_w, new_h), resample = Image.LANCZOS)
-                        im_resized.save(full_path)
+                    	im_resized = im.resize((new_w, new_h), resample = Image.LANCZOS)
+                    	im_resized.save(full_path)
                 elif name.endswith('.json'):
                     self.resizeJson(full_path)
         print('Done...', top_dir)
@@ -112,7 +112,7 @@ if __name__ == '__main__':
         isDirectory = os.path.isdir(inputFileName)
         isFile = os.path.isfile(inputFileName)
         if not isDirectory and not isFile:
-            print("File or direcotry %s doesn't exist." % (inputFileName, ))
+            print("File or direcotry %s doesn't exists." % (inputFileName, ))
             continue
         if not isDirectory:
             print("Not supported yet.")
