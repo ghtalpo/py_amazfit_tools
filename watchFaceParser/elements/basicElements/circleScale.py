@@ -9,6 +9,7 @@ class CircleScale:
         5: { 'Name': 'StartAngle', 'Type': 'long'},
         6: { 'Name': 'EndAngle', 'Type': 'long'},
         7: { 'Name': 'Width', 'Type': 'long'},
-        8: { 'Name': 'Color', 'Type': Color},
-        9: { 'Name': 'Flatness', 'Type': 'long'}, #verge
+        8: { 'Name': 'Color', 'Type': Color}, # not color?, encoded position? ..XXXYYY should change convert.py
+        9: { 'Name': 'Unknown9', 'Type': 'long'},
+        10: { 'Name': 'ImageIndex', 'Type': 'long'},
     }
