@@ -43,6 +43,9 @@ All credit goes to Валерий Миронов(https://bitbucket.org/valeronm/
       * to unpack
         * drag & drop WATCH_FACE_FILE.bin into main_gtr/main.exe
 
+## usage(compress/uncompress)
+* use respacket/resunpacker under resunpacker_qzip_bin
+
 ## known issues in json
 ### Date/Weekday/ImageCount (GTR(47mm))
 * Unlike verge lite, Date/Weekday/ImagesCount should be 21 instead of 7
