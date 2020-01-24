@@ -44,7 +44,7 @@ All credit goes to Валерий Миронов(https://bitbucket.org/valeronm/
         * drag & drop WATCH_FACE_FILE.bin into main_gtr/main.exe
 
 ## usage(compress/uncompress)
-* use respacket/resunpacker under resunpacker_qzip_bin
+* use respacker/resunpacker under resunpacker_qzip_bin
 
 ## known issues in json
 ### Date/Weekday/ImageCount (GTR(47mm))
