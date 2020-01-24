@@ -12,6 +12,7 @@ class WatchFace(ContainerElement):
         self._status = None
         self._battery = None
         self._analogDial = None
+        self._auxDial = None
         super(WatchFace, self).__init__(parameters, parameter = None, parent = None, name = '')
 
 
@@ -49,6 +50,10 @@ class WatchFace(ContainerElement):
 
     def getAnalogDial(self):
         return self._analogDial
+
+
+    def getAuxDial(self):
+        return self._auxDial
 
 
     def createChildForParameter(self, parameter):
@@ -89,5 +94,9 @@ class WatchFace(ContainerElement):
             from watchFaceParser.models.elements.analogDialElement import AnalogDialElement
             self._analogDial = AnalogDialElement(parameter)
             return self._analogDial
+        elif parameterId == 15:
+            from watchFaceParser.models.elements.auxDialElement import AuxDialElement
+            self._auxDial = AuxDialElement(parameter)
+            return self._auxDial
         else:
             return super(WatchFace, self).createChildForParameter(parameter)

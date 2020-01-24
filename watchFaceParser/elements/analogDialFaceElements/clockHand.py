@@ -8,5 +8,6 @@ class ClockHand:
         3: { 'Name': 'CenterOffset', 'Type': Coordinates},
         4: { 'Name': 'unknown4', 'Type': Coordinates},
         5: { 'Name': 'Image', 'Type': Image},
+        6: { 'Name': 'unknown6', 'Type': Coordinates},
     }
 

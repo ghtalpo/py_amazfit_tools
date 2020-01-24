@@ -8,6 +8,7 @@ from watchFaceParser.elements.battery import Battery
 from watchFaceParser.elements.analogDialFace import AnalogDialFace
 from watchFaceParser.elements.unknownType14 import UnknownType14
 from watchFaceParser.elements.weather import Weather
+from watchFaceParser.elements.auxDialFace import AuxDialFace
 
 class WatchFace:
     definitions = {
@@ -21,5 +22,5 @@ class WatchFace:
         9: { 'Name': 'Battery', 'Type': Battery},
         10: { 'Name': 'AnalogDialFace', 'Type': AnalogDialFace},
         14: { 'Name': 'Unknown14', 'Type': UnknownType14},
-        15: { 'Name': 'Unknown15', 'Type': AnalogDialFace}, #?
+        15: { 'Name': 'AuxDialFace', 'Type': AuxDialFace},
     }
