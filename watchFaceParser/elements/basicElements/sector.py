@@ -1,4 +1,4 @@
-﻿class Unknown6:
+﻿class Sector:
     definitions = {
         1: { 'Name': 'unknown1', 'Type': 'long'},
         2: { 'Name': 'unknown2', 'Type': 'long'},
