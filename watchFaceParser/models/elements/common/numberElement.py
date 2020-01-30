@@ -100,6 +100,7 @@ class NumberElement(CoordinatesElement):
         from watchFaceParser.models.elements.basic.valueElement import ValueElement
 
         parameterId = parameter.getId()
+
         if parameterId == 3:
             self._bottomRightX = parameter.getValue()
             return ValueElement(parameter, self, 'BottomRightX')

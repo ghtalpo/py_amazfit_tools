@@ -7,6 +7,7 @@ class DateElement(ContainerElement):
     def __init__(self, parameter, parent = None, name = None):
         self._monthAndDay = None
         self._weekDay = None
+        self._year = None
         super(DateElement, self).__init__(parameters = None, parameter = parameter, parent = parent, name = name)
 
 
@@ -28,5 +29,9 @@ class DateElement(ContainerElement):
             from watchFaceParser.models.elements.date.weekDayElement import WeekDayElement
             self._weekDay = WeekDayElement(parameter = parameter, parent = self, name = 'WeekDay')
             return self._weekDay
+        elif parameterId == 5:
+            from watchFaceParser.models.elements.date.yearElement import YearElement
+            self._year = YearElement(parameter = parameter, parent = self, name = 'Year')
+            return self._year
         else:
             return super(DateElement, self).createChildForParameter(parameter)
