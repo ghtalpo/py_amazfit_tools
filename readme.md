@@ -1,10 +1,10 @@
 # py amazfit tool
-An python port of valeronm's amazfitbiptools(v.1.0.3.1) with some hacks for verge lite/gtr.
+An python port of valeronm's amazfitbiptools(v.1.0.3.1) with some hacks for verge lite/gtr/gts.
 
 All credit goes to Валерий Миронов(https://bitbucket.org/valeronm/amazfitbiptools/src/master/)
 
 ## what is...
-* can pack/unpack .bin file for amazfit verge lite/gtr(original watchfaces)
+* can pack/unpack .bin file for amazfit verge lite/gtr/gts(original watchfaces)
 
 ## what isn't...
 * 100% compatibility with amazfit_bip_tool
@@ -65,8 +65,7 @@ All credit goes to Валерий Миронов(https://bitbucket.org/valeronm/
     }
   },
 ```
-### weather info
-* preview only
+### weather info(GTS/GTR only)
 * not works for verge lite
 
 ## why python instead of C#
