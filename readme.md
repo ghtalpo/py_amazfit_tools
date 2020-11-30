@@ -42,6 +42,11 @@ All credit goes to Валерий Миронов(https://bitbucket.org/valeronm/
         * drag & drop WATCH_FACE_FILE.json into main_gtr/main.exe
       * to unpack
         * drag & drop WATCH_FACE_FILE.bin into main_gtr/main.exe
+* for GTS
+  * to unpack
+    * python main.py --gts WATCH_FACE_FILE.bin
+  * to pack
+    * python main.py --gts WATCH_FACE_FILE.json
 
 ## usage(compress/uncompress)
 * use respacker/resunpacker under resunpacker_qzip_bin
