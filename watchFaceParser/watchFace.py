@@ -9,6 +9,7 @@ from watchFaceParser.elements.analogDialFace import AnalogDialFace
 from watchFaceParser.elements.unknownType14 import UnknownType14
 from watchFaceParser.elements.weather import Weather
 from watchFaceParser.elements.auxDialFace import AuxDialFace
+from watchFaceParser.elements.shortcuts import Shortcuts
 
 class WatchFace:
     definitions = {
@@ -23,4 +24,5 @@ class WatchFace:
         10: { 'Name': 'AnalogDialFace', 'Type': AnalogDialFace},
         14: { 'Name': 'Unknown14', 'Type': UnknownType14},
         15: { 'Name': 'AuxDialFace', 'Type': AuxDialFace},
+        16: { 'Name': 'Shortcuts', 'Type': Shortcuts},
     }

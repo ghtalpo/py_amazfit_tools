@@ -2,22 +2,28 @@ import logging
 import io
 
 from watchFaceParser.models.parameterFlags import ParameterFlags
-from watchFaceParser.utils.integerConverter import long2ulong
+from watchFaceParser.utils.integerConverter import long2ulong, ulong2long
 
 
 class Parameter:
-    def __init__(self, _id, value):
-        if type(value) == int:
+    def __init__(self, _id, value, flags = None):
+        if type(flags) == int:
             self._id = _id
-            self._value = value
+            self._value = None
             self._children = None
+            self._flags = flags
+        elif type(value) == int:
+            self._id = _id
+            self._value = ulong2long(value)
+            self._children = None
+            self._flags = None
         elif type(value) == list:
             self._id = _id
             self._value = None
             self._children = value
+            self._flags = None
         else:
             raise Exception(f'invalid type for parameter {value}:{type(value)}')
-
 
     def getId(self):
         return self._id
@@ -30,10 +36,11 @@ class Parameter:
     def getValue(self):
         return self._value
 
-
     def hasChildren(self):
         return self._children and len(self._children) > 0
 
+    def hasFlags(self):
+        return self._flags
 
     @staticmethod
     def writeByte(stream, v):
@@ -44,11 +51,18 @@ class Parameter:
         assert(type(traceOffset) == int)
         size = 0
         flags = ParameterFlags.hasChildren if self.hasChildren() else 0
+        flags |= self.hasFlags() if self.hasFlags() else 0
+
         rawId = 0xff & ((self.getId() << 3) + flags)
-        Parameter.writeByte(stream, rawId)
+        #Parameter.writeByte(stream, rawId)
+        self.writeValue(stream, rawId, traceOffset)
 
         size += 1
-        if self.hasChildren():
+        if self.hasFlags():
+    #        print ("EDDI %02x %x %x"% (rawId,flags,(ParameterFlags.Unknown | ParameterFlags.Unknown2| ParameterFlags.hasChildren)))
+            logging.debug(("\t" * traceOffset) + f"{size} bytes")
+            return size -1
+        elif self.hasChildren():
             logging.debug(("\t" * traceOffset) + f"{self.getId()} ({rawId:02X}):")
             size += self.writeList(stream, traceOffset + 1)
             logging.debug(("\t" * traceOffset) + f"{size} bytes")
@@ -108,15 +122,28 @@ class Parameter:
 
     @staticmethod
     def readFrom(fileStream, traceOffset = 0):
-        rawId = Parameter.readByte(fileStream, traceOffset)
+        #rawId = Parameter.readByte(fileStream, traceOffset)
+        rawId = Parameter.readValue(fileStream, traceOffset)
         _id = (rawId & 0xf8) >> 3
+ #       print ("%03x" % rawId, rawId & 0x07)
         flags = ParameterFlags(rawId & 0x07)
+        #logging.info("FLAGS %x" % (rawId & 0x07))
 
         if _id == 0:
             raise IndexError("Parameter with zero Id is invalid.") #ArgumentException
 
         value = Parameter.readValue(fileStream, traceOffset)
-        if flags.hasFlag(ParameterFlags.hasChildren):
+        logging.info("DEBUG ID %d FLAGS %x VALUE %x" % (_id, rawId & 0x07, value))
+#        if value == 1 and flags.hasFlag(ParameterFlags.hasChildren):
+#            value = Parameter.readValue(fileStream, traceOffset)
+##            logging.info("DEBUG                 %02x" % Parameter.readByte(fileStream, traceOffset))
+#            pass
+        if flags.hasFlag(ParameterFlags.Unknown) or flags.hasFlag(ParameterFlags.Unknown2):
+            value = flags.getValue()
+        elif flags.hasFlag(ParameterFlags.hasChildren):
+            if value == 0:
+                logging.info("DEBUG                 %02x" % Parameter.readByte(fileStream, traceOffset))
+                logging.info("DEBUG                 %02x" % Parameter.readByte(fileStream, traceOffset))
             logging.info(Parameter.traceWithOffset(f"{_id} ({rawId:2X}): {value} bytes", traceOffset))
             buffer = fileStream.read(value)
             stream = io.BytesIO(buffer)

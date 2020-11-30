@@ -98,5 +98,9 @@ class WatchFace(ContainerElement):
             from watchFaceParser.models.elements.auxDialElement import AuxDialElement
             self._auxDial = AuxDialElement(parameter)
             return self._auxDial
+        elif parameterId == 16:
+            from watchFaceParser.models.elements.auxDialElement import AuxDialElement
+            self._auxDial = AuxDialElement(parameter)
+            return self._auxDial
         else:
             return super(WatchFace, self).createChildForParameter(parameter)

@@ -73,6 +73,22 @@ class ActivityElement(ContainerElement):
             from watchFaceParser.models.elements.common.imageElement import ImageElement
             self._circleRange = ImageElement(parameter = parameter, parent = self, name = '?CircleRange?')
             return self._circleRange
+        elif parameterId == 12:
+            from watchFaceParser.models.elements.activity.pulseLinearElement import PulseLinearElement
+            self._pulseLinear = PulseLinearElement(parameter = parameter, parent = self, name = '?pulseLinear?')
+            return self._pulseLinear
+        elif parameterId == 11:
+            from watchFaceParser.models.elements.activity.pulseMeterElement import PulseMeterElement
+            self._pulseMeter = PulseMeterElement(parameter = parameter, parent = self, name = '?PulseMeter?')
+            return self._pulseMeter
+        elif parameterId == 17:
+            from watchFaceParser.models.elements.activity.caloriesContainerElement import CaloriesContainerElement
+            self._caloriesContainer = CaloriesContainerElement(parameter = parameter, parent = self, name = '?CaloriesContainer?')
+            return self._caloriesContainer
+        elif parameterId == 18:
+            from watchFaceParser.models.elements.activity.pulseContainerElement import PulseContainerElement
+            self._pulseContainer = PulseContainerElement(parameter = parameter, parent = self, name = '?PulseContainer?')
+            return self._pulseContainer
         else:
             return super(ActivityElement, self).createChildForParameter(parameter)
 
