@@ -111,7 +111,11 @@ class CircularProgressElement(CoordinatesElement):
                 d.polygon([(x1,y1), (x2, y2), (x3,y3)], fill = self.getColor())
             elif self._flatness == 180:
                 pass
-            drawer.paste(temp, (self.getX() - self.getRadiusX() - int(self._width  / 2), self.getY() - self.getRadiusY() - int(self._width  / 2)), mask)
+            # drawer.paste(temp, (self.getX() - self.getRadiusX() - int(self._width  / 2), self.getY() - self.getRadiusY() - int(self._width  / 2)), mask)
+
+            cropped = Image.new('RGBA',temp.size,(0,0,0,0))
+            cropped.paste(temp, (0, 0), mask)
+            drawer.paste(temp, (self.getX() - self.getRadiusX() - int(self._width  / 2), self.getY() - self.getRadiusY() - int(self._width  / 2)), cropped)
 
         else:
             from PIL import ImageDraw
