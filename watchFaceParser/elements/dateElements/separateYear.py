@@ -3,4 +3,5 @@
 class SeparateYear:
     definitions = {
         1: { 'Name': 'Year', 'Type': Number},
+        2: { 'Name': 'DelimiterImageIndex', 'Type': 'long'},
     }
