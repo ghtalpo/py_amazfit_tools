@@ -1,34 +1,83 @@
+MODE_VL = 0
+MODE_GTR = 1
+MODE_GTS = 2
 class Config:
-    _is_gtr = False
-    _image_size = 360
-    _preview_size = 210
+    _mode = MODE_VL
+    _dimensions = {
+        MODE_VL: {
+            "width": 360,
+            "height": 360,
+            "preview_width": 210,
+            "preview_height": 210,
+        },
+        MODE_GTR: {
+            "width": 454,
+            "height": 454,
+            "preview_width": 266,
+            "preview_height": 266,
+        },
+        MODE_GTS: {
+            "width": 348,
+            "height": 442,
+            "preview_width": 242,
+            "preview_height": 304,
+        },
+    }
 
 
     @staticmethod
     def setGtrMode(gtr):
-        Config._is_gtr = gtr
-        if Config._is_gtr:
-            Config._image_size = 454
-            Config._preview_size = 266
+        if gtr == True:
+            Config._mode = MODE_GTR
 
 
     @staticmethod
     def isGtrMode():
-        return Config._is_gtr
+        return Config._mode == MODE_GTR
 
 
     @staticmethod
-    def getImageSize():
-        return Config._image_size
+    def setGtsMode(gts):
+        if gts == True:
+            Config._mode = MODE_GTS
 
 
     @staticmethod
-    def getImageSizeHalf():
-        return int(Config._image_size / 2)
+    def isGtsMode():
+        return Config._mode == MODE_GTS
 
 
     @staticmethod
-    def getPreviewSize():
-        # return (Config._preview_size, Config._preview_size)
-        return Config._preview_size
+    def getDimensions():
+        return Config._dimensions[Config._mode]
+
+
+    @staticmethod
+    def getImageWidth():
+        return Config.getDimensions()["width"]
+
+
+    @staticmethod
+    def getImageWidthHalf():
+        return int(Config.getImageWidth() / 2)
+
+
+    @staticmethod
+    def getImageHeight():
+        return Config.getDimensions()["height"]
+
+
+    @staticmethod
+    def getImageHeightHalf():
+        return int(Config.getImageHeight() / 2)
+
+
+    @staticmethod
+    def getPreviewWidth():
+        return Config.getDimensions()["preview_width"]
+
+
+    @staticmethod
+    def getPreviewHeight():
+        return Config.getDimensions()["preview_height"]
 

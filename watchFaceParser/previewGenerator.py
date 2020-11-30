@@ -21,6 +21,6 @@ class PreviewGenerator:
         from PIL import Image, ImageDraw
 
         # graphics = Image.new('RGBA', (360, 360))
-        graphics = Image.new('RGBA', (Config.getImageSize(), Config.getImageSize()))
+        graphics = Image.new('RGBA', (Config.getImageWidth(), Config.getImageHeight()))
         watchFace.draw3(graphics, resources, state)
         return graphics
