@@ -44,7 +44,12 @@ class BatteryElement(ContainerElement):
     def draw3(self, drawer, images, state):
         assert(type(images) == list)
 
-        if Config.isGtsMode() and self.getText() and self.getPercent():
+        shouldPatchPercent = False
+        if self.getText() and self.getPercent() and self.getPercent().getX() == 0 and self.getPercent().getY() == 0:
+            # is this hack needed for GTR also?
+            shouldPatchPercent = True
+
+        if shouldPatchPercent:
             resources = images
             assert(type(resources) == list)
             battery = state.getBatteryLevel()
