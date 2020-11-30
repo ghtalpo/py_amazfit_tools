@@ -229,7 +229,7 @@ class Parser:
             num = i + 1
             watchState = WatchState(
                 BatteryLevel = 100 - i * 10,
-                Pulse = 60 + num * 2,
+                Pulse = 40 + num * 10,
                 Steps = num * 1000,
                 Calories = num * 75,
                 Distance = num * 700,
