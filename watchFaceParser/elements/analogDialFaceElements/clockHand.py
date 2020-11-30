@@ -4,7 +4,7 @@ from watchFaceParser.elements.basicElements.sector import Sector
 
 class ClockHand:
     definitions = {
-        1: { 'Name': 'OnlyBorder', 'Type': 'long'},
+        1: { 'Name': 'OnlyBorder', 'Type': 'bool'},
         2: { 'Name': 'Color', 'Type': 'long'},
         3: { 'Name': 'CenterOffset', 'Type': Coordinates},
         4: { 'Name': 'Shape', 'Type': Coordinates},

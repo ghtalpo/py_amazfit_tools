@@ -42,7 +42,10 @@ class ParametersConverter:
                 elif propertyType == Color:
                     value = Color.fromJSON(propertyValue)
                 elif propertyType == 'long' or propertyType == 'long?':
-                    value = int(value)
+                    if isinstance(value, str) and value.startswith('0x'):
+                        value = int(value, 16)
+                    else:
+                        value = int(value)
 
                 logging.debug(f"{currentPath} '{propertyInfo['Name']}': {value}")
                 result.append(Parameter(_id, value))

@@ -1,5 +1,5 @@
 ﻿class Sector:
     definitions = {
-        1: { 'Name': 'unknown1', 'Type': 'long'},
-        2: { 'Name': 'unknown2', 'Type': 'long'},
+        1: { 'Name': 'StartAngle', 'Type': 'long'},
+        2: { 'Name': 'EndAngle', 'Type': 'long'},
     }
