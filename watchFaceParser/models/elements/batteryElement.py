@@ -1,6 +1,8 @@
 ﻿import logging
 
 from watchFaceParser.models.elements.basic.containerElement import ContainerElement
+from watchFaceParser.config import Config
+from watchFaceParser.utils.integerConverter import uint2int
 
 
 class BatteryElement(ContainerElement):
@@ -9,6 +11,8 @@ class BatteryElement(ContainerElement):
         self._percent = None
         self._scale = None
         self._images = None
+        self._unknown4 = None
+        self._batteryLinear = None
         super(BatteryElement, self).__init__(parameters = None, parameter = parameter, parent = parent, name = name)
 
 
@@ -26,6 +30,48 @@ class BatteryElement(ContainerElement):
 
     def getImages(self):
         return self._images
+
+
+    def getBatteryLinear(self):
+        return self._batteryLinear
+
+
+    def getUnknown4(self):
+        return self._unknown4
+
+
+    # override for percent of GTS
+    def draw3(self, drawer, images, state):
+        assert(type(images) == list)
+
+        if Config.isGtsMode() and self.getText() and self.getPercent():
+            resources = images
+            assert(type(resources) == list)
+            battery = state.getBatteryLevel()
+
+            imagesTmp = self.getText().getImagesForNumber(resources, battery)
+            imagesTmp.append(resources[self.getPercent().getImageIndex()])
+
+            from watchFaceParser.helpers.drawerHelper import DrawerHelper
+            DrawerHelper.drawImages(drawer, imagesTmp, uint2int(self.getText().getSpacing()), self.getText().getAlignment(), self.getText().getBox())
+        else:
+            if self.getText():
+                self.getText().draw3(drawer, images, state)
+
+            if self.getPercent():
+                self.getPercent().draw3(drawer, images, state)
+
+        if self.getScale():
+            self.getScale().draw3(drawer, images, state)
+
+        if self.getImages():
+            self.getImages().draw3(drawer, images, state)
+
+        if self.getBatteryLinear():
+            self.getBatteryLinear().draw3(drawer, images, state)
+
+        if self.getUnknown4():
+            self.getUnknown4().draw3(drawer, images, state)
 
 
     def createChildForParameter(self, parameter):
@@ -47,6 +93,14 @@ class BatteryElement(ContainerElement):
             from watchFaceParser.models.elements.battery.circularBatteryElement import CircularBatteryElement
             self._scale = CircularBatteryElement(parameter = parameter, parent = self, name = '_scale')
             return self._scale
+        elif parameterId == 3: #icons - this is the circular battery element found in GTS - Silver Watchface
+            from watchFaceParser.models.elements.battery.batteryLinearElement import BatteryLinearElement
+            self._batteryLinear = BatteryLinearElement(parameter = parameter, parent = self, name = '?pulseLinear?')
+            return self._batteryLinear
+        elif parameterId == 4: #unknown4
+            from watchFaceParser.models.elements.analogDial.secondsClockHandElement import SecondsClockHandElement # must must be own. fix it!!
+            self._unknown4 = SecondsClockHandElement(parameter = parameter, parent = self, name = 'Unknown4')
+            return self._unknown4
         else:
             return super(BatteryElement, self).createChildForParameter(parameter)
 
