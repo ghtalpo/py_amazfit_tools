@@ -26,7 +26,7 @@ class PulseLinearElement(IconSetElement):
         assert(type(resources) == list)
 
         # pulse image does not overlap
-        fakeZone = int(state.getPulse() * len(self._ar) / 150)
+        fakeZone = int(state.getPulse() * len(self._ar) / 200)
         x = self.getCoordinatesArray()[fakeZone]._x
         y = self.getCoordinatesArray()[fakeZone]._y
         temp = resources[self._imageIndex + fakeZone].getBitmap()
