@@ -3,7 +3,7 @@ import os.path
 
 from watchFaceParser.utils.elementsHelper import ElementsHelper
 from watchFaceParser.models.parameterFlags import ParameterFlags
-from watchFaceParser.utils.integerConverter import uint2int
+from watchFaceParser.utils.integerConverter import uint2int,ulong2long
 from watchFaceParser.models.textAlignment import TextAlignment
 from watchFaceParser.models.color import Color
 from watchFaceParser.models.parameter import Parameter
@@ -30,7 +30,7 @@ class ParametersConverter:
                 propertyType = propertyInfo['Type'][0]
             else:
                 propertyType = propertyInfo['Type']
-				
+
             propertyValue = ParametersConverter.getValue(propertyInfo, serializable)
 
             if propertyValue is None:
@@ -45,7 +45,7 @@ class ParametersConverter:
                 elif propertyType == Color:
                     value = Color.fromJSON(propertyValue)
                 elif propertyType == 'long' or propertyType == 'long?':
-                    value = int(value)				
+                    value = int(value)
 
                 logging.debug(f"{currentPath} '{propertyInfo['Name']}': {value}")
                 result.append(Parameter(_id, value))
@@ -119,7 +119,7 @@ class ParametersConverter:
                 raise IndexError(f"Parameter {parameterId} isn't supported for {currentType}")
 
             propertyInfo = properties[parameterId]
-            
+
             if isinstance(propertyInfo['Type'],list):
                 propertyType = propertyInfo['Type'][0]
             else:
@@ -141,8 +141,8 @@ class ParametersConverter:
                     setattr(result, propertyInfoName, ulong2long(parameter.getValue() or None))
             elif propertyType == '[]':
                 assert(False) # not tested yet
-            else:		
-                tmp = propertyType()	
+            else:
+                tmp = propertyType()
                 childIsList = False
                 artmp = []
                 for x in parameter.getChildren():
