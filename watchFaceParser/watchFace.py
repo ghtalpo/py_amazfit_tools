@@ -6,6 +6,7 @@ from watchFaceParser.elements.stepsProgress import StepsProgress
 from watchFaceParser.elements.status import Status
 from watchFaceParser.elements.battery import Battery
 from watchFaceParser.elements.analogDialFace import AnalogDialFace
+from watchFaceParser.elements.unknownType11 import UnknownType11
 from watchFaceParser.elements.unknownType14 import UnknownType14
 from watchFaceParser.elements.weather import Weather
 from watchFaceParser.elements.auxDialFace import AuxDialFace
@@ -22,6 +23,7 @@ class WatchFace:
         8: { 'Name': 'Status', 'Type': Status},
         9: { 'Name': 'Battery', 'Type': Battery},
         10: { 'Name': 'AnalogDialFace', 'Type': AnalogDialFace},
+        11: { 'Name': 'Unknown11', 'Type': UnknownType11},
         14: { 'Name': 'Unknown14', 'Type': UnknownType14},
         15: { 'Name': 'AuxDialFace', 'Type': AuxDialFace},
         16: { 'Name': 'Shortcuts', 'Type': Shortcuts},
