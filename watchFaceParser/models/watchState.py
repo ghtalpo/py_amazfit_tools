@@ -18,6 +18,8 @@ class WatchState:
 
         self._currentWeather = WeatherCondition.PartlyCloudy
         self._currentTemperature = CurrentTemperature
+        self._dayTemperature = CurrentTemperature
+        self._nightTemperature = CurrentTemperature
 
 
 
@@ -77,12 +79,28 @@ class WatchState:
         return self._currentTemperature
 
 
+    def getDayTemperature(self):
+        return self._dayTemperature
+
+
+    def getNightTemperature(self):
+        return self._nightTemperature
+
+
     def setCurrentWeather(self, n):
         self._currentWeather = n
 
 
     def setCurrentTemperature(self, n):
         self._currentTemperature = n
+
+
+    def setDayTemperature(self, n):
+        self._dayTemperature = n
+
+
+    def setNightTemperature(self, n):
+        self._nightTemperature = n
 
 
     def toJSON(self):
@@ -123,5 +141,7 @@ class WatchState:
         w._doNotDisturb = j['DoNotDisturb']
         w._currentWeather = j['CurrentWeather']
         w._currentTemperature = j['CurrentTemperature']
+        w._dayTemperature = j['DayTemperature']
+        w._nightTemperature = j['NightTemperature']
         return w
 

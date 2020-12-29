@@ -243,10 +243,14 @@ class Parser:
             if num < 3:
                 watchState.setCurrentWeather(WeatherCondition.Unknown)
                 watchState.setCurrentTemperature(None)
+                watchState.setDayTemperature(None)
+                watchState.setNightTemperature(None)
             else:
                 index = num - 2
                 watchState.setCurrentWeather(index)
                 watchState.setCurrentTemperature(-10 + i * 6)
+                watchState.setDayTemperature(0 + i * 6)
+                watchState.setNightTemperature(-20 + i * 6)
 
             watchState.setTime(datetime.datetime(year = time.year, month = num, day = num * 2 + 5, hour = i * 2, minute = i * 6, second = i))
             states.append(watchState)
