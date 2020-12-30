@@ -36,7 +36,6 @@ class TodayElement(CompositeElement):
         if parameterId == 1:
             #separate
             from watchFaceParser.models.elements.weather.separateTemperatureElement import SeparateTemperatureElement
-            print(SeparateTemperatureElement)
             self._current = SeparateTemperatureElement(parameter, self, '?_separate?')
             return self._current
         elif parameterId == 3:
