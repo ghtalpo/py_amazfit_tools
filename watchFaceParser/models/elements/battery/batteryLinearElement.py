@@ -12,7 +12,10 @@ class BatteryLinearElement(IconSetElement):
 
     def draw3(self, drawer, resources, state):
         assert(type(resources) == list)
-        super(BatteryLinearElement, self).draw3(drawer, resources, int(state.getBatteryLevel() * len(self._ar) / 150))
+        index = int(state.getBatteryLevel() * len(self._ar) / 100)
+        if index > 0:
+            index -= 1
+        super(BatteryLinearElement, self).draw3(drawer, resources, index)
 
     def createChildForParameter(self, parameter):
         if parameter.getId() == 1:
