@@ -7,6 +7,7 @@ from watchFaceParser.utils.integerConverter import uint2int
 class TemperatureElement(CompositeElement):
     def __init__(self, parameter, parent, name = None):
         self._current = None
+        self._today = None
         self._symbols = None
         super(TemperatureElement, self).__init__(parameters = None, parameter = parameter, parent = parent, name = name)
 
