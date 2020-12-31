@@ -2,13 +2,14 @@
 
 from watchFaceParser.models.elements.common.coordinatesElement import CoordinatesElement
 from watchFaceParser.helpers.drawerHelper import DrawerHelper
+from watchFaceParser.utils.integerConverter import uint2int
 
 class Box:
     def __init__(self, x, y, width, height):
-        self._x = x
-        self._y = y
-        self._width = width
-        self._height = height
+        self._x = uint2int(x)
+        self._y = uint2int(y)
+        self._width = uint2int(width)
+        self._height = uint2int(height)
 
 
     def getX(self):
