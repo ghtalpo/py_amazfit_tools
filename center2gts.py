@@ -3,6 +3,7 @@ import logging
 
 class Converter:
     width_gtr = 454
+    width_gtr_42 = 390
     width_verge_lite = 360
     width_bip = 176
     width_gts = 348
@@ -88,6 +89,10 @@ class Converter:
             elif w == Converter.width_bip:
                 self.source_size = Converter.width_bip
                 print('BIP source')
+                return
+            elif w == Converter.width_gtr_42:
+                self.source_size = Converter.width_gtr_42
+                print('GTR(42) source')
                 return
             elif w == Converter.width_verge_lite:
                 self.source_size = Converter.width_verge_lite
