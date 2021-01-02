@@ -12,6 +12,7 @@ class WatchFace(ContainerElement):
         self._status = None
         self._battery = None
         self._analogDial = None
+        self._animation = None
         self._auxDial = None
         super(WatchFace, self).__init__(parameters, parameter = None, parent = None, name = '')
 
@@ -50,6 +51,10 @@ class WatchFace(ContainerElement):
 
     def getAnalogDial(self):
         return self._analogDial
+
+
+    def getAnimation(self):
+        return self._animation
 
 
     def getAuxDial(self):
@@ -94,6 +99,10 @@ class WatchFace(ContainerElement):
             from watchFaceParser.models.elements.analogDialElement import AnalogDialElement
             self._analogDial = AnalogDialElement(parameter)
             return self._analogDial
+        elif parameterId == 11:
+            from watchFaceParser.models.elements.animationElement import AnimationElement
+            self._animation = AnimationElement(parameter)
+            return self._animation
         elif parameterId == 15:
             from watchFaceParser.models.elements.auxDialElement import AuxDialElement
             self._auxDial = AuxDialElement(parameter)
