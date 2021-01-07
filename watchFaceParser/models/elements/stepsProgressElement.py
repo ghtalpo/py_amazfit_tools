@@ -49,9 +49,9 @@ class StepsProgressElement(ContainerElement):
             self._images4 = StepGaugeElement(parameter = parameter, parent = self, name = '?_images?')
             return self._images4
         elif parameterId == 6:
-            from watchFaceParser.models.elements.goalProgress.stepsClockHandElement import StepsClockHandElement # must must be own. fix it!!
-            self._clockHand = StepsClockHandElement(parameter = parameter, parent = self, name = 'ClockHand')
-            return self._clockHand
+            from watchFaceParser.models.elements.goalProgress.unknown6Element import Unknown6Element
+            self._unknown6 = Unknown6Element(parameter = parameter, parent = self, name = 'ClockHand')
+            return self._unknown6
         elif parameterId == 5:
             from watchFaceParser.models.elements.goalProgress.circularGoalProgressElement import CircularGoalProgressElement
             self._circular2 = CircularGoalProgressElement(parameter = parameter, parent = self, name = 'Circular2')
