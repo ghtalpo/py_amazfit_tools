@@ -103,8 +103,8 @@ class BatteryElement(ContainerElement):
             self._batteryLinear = BatteryLinearElement(parameter = parameter, parent = self, name = '?pulseLinear?')
             return self._batteryLinear
         elif parameterId == 4: #unknown4
-            from watchFaceParser.models.elements.analogDial.secondsClockHandElement import SecondsClockHandElement # must must be own. fix it!!
-            self._unknown4 = SecondsClockHandElement(parameter = parameter, parent = self, name = 'Unknown4')
+            from watchFaceParser.models.elements.battery.unknown4Element import Unknown4Element
+            self._unknown4 = Unknown4Element(parameter = parameter, parent = self, name = 'Unknown4')
             return self._unknown4
         else:
             return super(BatteryElement, self).createChildForParameter(parameter)
