@@ -43,7 +43,7 @@ class Converter:
 
     def _patchTree(self, tree, depth = 0):
         for k in tree:
-            if k == 'AnalogDialFace' or k == 'ClockHand' or k == 'Unknown4' or k == 'DaysProgress' or k == 'Percent' or k == 'AnalogDOW': # skip these sections
+            if k == 'AnalogDialFace' or k == 'ClockHand' or k == 'Unknown4' or k == 'Unknown6' or k == 'DaysProgress' or k == 'Percent' or k == 'AnalogDOW': # skip these sections
                 continue
             value = tree[k]
             if type(value) == int:
